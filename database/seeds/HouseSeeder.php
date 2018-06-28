@@ -7,21 +7,9 @@ class HouseSeeder extends Seeder
 {
     public function run()
     {
-        House::create([
-            'name' => 'gryffindor',
-            'score' => 0
-        ]);
-        House::create([
-            'name' => 'hufflepuff',
-            'score' => 0
-        ]);
-        House::create([
-            'name' => 'ravenclaw',
-            'score' => 0
-        ]);
-        House::create([
-            'name' => 'slytherin',
-            'score' => 0
-        ]);
+        House::firstOrCreate(['name' => 'gryffindor'], ['name' => 'gryffindor', 'score' => 0]);
+        House::firstOrCreate(['name' => 'hufflepuff'], ['name' => 'hufflepuff', 'score' => 0]);
+        House::firstOrCreate(['name' => 'ravenclaw'], ['name' => 'ravenclaw', 'score' => 0]);
+        House::firstOrCreate(['name' => 'slytherin'], ['name' => 'slytherin', 'score' => 0]);
     }
 }
